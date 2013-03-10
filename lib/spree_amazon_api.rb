@@ -10,7 +10,7 @@ module SpreeAmazonApi
     def self.activate
       # amazon_options = YAML.load(File.open(File.join(Rails.root,'config', 'amazon.yml')))[Rails.env]
 
-      Spree::Config.searcher_class = Spree::Search::Amazon if Spree::Config.instance
+      Spree::Config.searcher_class = Spree::Search::Amazon
 
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.env.production? ? require(c) : load(c)
