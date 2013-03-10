@@ -1,5 +1,5 @@
 require 'open-uri'
-Product.class_eval do
+Spree::Product.class_eval do
   class << self
     def save_from_amazon(options)
       if @spree_product = create!(options[:attributes])

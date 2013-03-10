@@ -1,4 +1,4 @@
-Taxon.class_eval do
+Spree::Taxon.class_eval do
   class << self
 
     def roots
