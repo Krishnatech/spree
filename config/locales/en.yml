@@ -1,0 +1,9 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  amazon_settings: Amazon Settings
+  amazon_description: Amazon Settings
+  redirect_to_amazon_on_buy: 'Redirect to Amazon on press "Buy"'
+  buy_on_amazon: Buy on Amazon

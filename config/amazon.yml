@@ -1,0 +1,25 @@
+---
+default: &DEFAULT
+  :configure:
+    :aWS_access_key_id: 0XQXXC6YV2C85DX1BF02
+    :aWS_secret_key: fwLOn0Y/IUXEM8Hk49o7QJV+ryOscbhXRb6CmA5l
+    :response_group: 'Large'
+    :country: 'us'
+  :query:
+    :q: "%{q}"
+    :options:
+      :search_index: 'All'
+      :response_group: 'Large, Accessories'
+      :sort: "salesrank"
+
+development:
+  <<: *DEFAULT
+
+test:
+  <<: *DEFAULT
+cucumber:
+  <<: *DEFAULT
+
+production:
+  <<: *DEFAULT
+
