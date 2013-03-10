@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_amazon_api'
-  s.version     = '1.3.7'
+  s.version     = '1.3.8'
   s.summary     = 'Amazon search api integration'
   s.description = 'Amazon search api integration'
   s.required_ruby_version = '>= 1.8.7'
@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '~> 1.3.2'
+  s.add_dependency 'amazon-ecs'
 
   s.add_development_dependency 'capybara', '~> 1.1.2'
   s.add_development_dependency 'coffee-rails'
