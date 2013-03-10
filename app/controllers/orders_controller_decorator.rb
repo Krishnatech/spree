@@ -1,4 +1,4 @@
-OrdersController.class_eval do
+Spree::OrdersController.class_eval do
   before_filter :check_amazon_product, :only => [:populate]
 
   private
