@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_amazon_api'
-  s.version     = '1.3.4'
+  s.version     = '1.3.5'
   s.summary     = 'Amazon search api integration'
   s.description = 'Amazon search api integration'
   s.required_ruby_version = '>= 1.8.7'
@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email     = 'celso.pitta@gmail.com'
   s.homepage  = 'http://www.spreecommerce.com'
 
-  s.files       = `git ls-files`.split("\n")
+  s.files       = Dir[ 'lib/**/*', 'app/**/*', 'config/*', 'db/*']
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
