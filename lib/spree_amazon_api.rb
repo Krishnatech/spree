@@ -21,7 +21,7 @@ module SpreeAmazonApi
 
 
 
-      AppConfiguration.class_eval do
+      Spree::AppConfiguration.class_eval do
         preference :redirect_to_amazon, :boolean,  :default => false
       end
 
