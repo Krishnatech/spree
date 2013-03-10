@@ -25,7 +25,7 @@ module SpreeAmazonApi
         preference :redirect_to_amazon, :boolean,  :default => false
       end
 
-      Spree::Config.class_eval do
+      Spree::AppConfiguration.class_eval do
         class << self
           def amazon_options
             @@amazon_options ||= YAML.load(File.open(File.join(Rails.root,'config', 'amazon.yml')))[Rails.env]
