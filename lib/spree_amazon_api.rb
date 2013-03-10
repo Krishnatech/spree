@@ -8,7 +8,7 @@ module SpreeAmazonApi
     config.autoload_paths += %W(#{config.root}/lib)
 
     def self.activate
-      # amazon_options = YAML.load(File.open(File.join(Rails.root,'config', 'amazon.yml')))[Rails.env]
+      amazon_options = YAML.load(File.open(File.join(Rails.root,'config', 'amazon.yml')))[Rails.env]
 
       Spree::Config.searcher_class = Spree::Search::Amazon
 
@@ -25,7 +25,7 @@ module SpreeAmazonApi
         preference :redirect_to_amazon, :boolean,  :default => false
       end
 
-      Spree::AppConfiguration.class_eval do
+      Spree::Config.class_eval do
         class << self
           def amazon_options
             @@amazon_options ||= YAML.load(File.open(File.join(Rails.root,'config', 'amazon.yml')))[Rails.env]
@@ -36,10 +36,10 @@ module SpreeAmazonApi
       end
 
       Amazon::Ecs.configure do |options|
-        options[:aWS_access_key_id]        = Spree::Config.amazon_options[:configure][:aWS_access_key_id]
-        options[:aWS_secret_key]           = Spree::Config.amazon_options[:configure][:aWS_secret_key]
-        options[:response_group]           = Spree::Config.amazon_options[:configure][:response_group] || 'Large'
-        options[:country]                  = Spree::Config.amazon_options[:configure][:country] || 'us'
+        options[:aWS_access_key_id]        = amazon_options[:configure][:aWS_access_key_id]
+        options[:aWS_secret_key]           = amazon_options[:configure][:aWS_secret_key]
+        options[:response_group]           = amazon_options[:configure][:response_group] || 'Large'
+        options[:country]                  = amazon_options[:configure][:country] || 'us'
       end
 
     end
