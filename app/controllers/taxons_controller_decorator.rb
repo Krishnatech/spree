@@ -1,4 +1,4 @@
-TaxonsController.class_eval do
+Spree::TaxonsController.class_eval do
 
   def show
     @taxon = Spree::Amazon::Taxon.find(params[:id])

@@ -1,4 +1,4 @@
-ProductsController.class_eval do
+Spree::ProductsController.class_eval do
 
     def show
     @product = Product.find_by_permalink(params[:id]) || Spree::Amazon::Product.find(params[:id])
