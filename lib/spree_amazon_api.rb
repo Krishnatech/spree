@@ -17,7 +17,7 @@ module SpreeAmazonApi
       end
 
       require File.join(File.dirname(__FILE__), "../lib/spree_ecs.rb")
-      Ability.register_ability(AmazonAbility)
+      Spree::Ability.register_ability(AmazonAbility)
 
 
 
