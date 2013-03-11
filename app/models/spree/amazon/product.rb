@@ -118,7 +118,8 @@ module Spree
       end
 
       def price_in(currency)
-        @price
+        return nil
+        #@price
       end
 
       def master
