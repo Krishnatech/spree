@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_amazon_api'
-  s.version     = '1.5.2'
+  s.version     = '1.5.3'
   s.summary     = 'Amazon search api integration'
   s.description = 'Amazon search api integration'
   s.required_ruby_version = '>= 1.8.7'

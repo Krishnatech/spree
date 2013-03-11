@@ -117,6 +117,10 @@ module Spree
         true
       end
 
+      def price_in(currency)
+        @price
+      end
+
       def master
         self
       end
