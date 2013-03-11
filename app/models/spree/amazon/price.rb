@@ -3,7 +3,7 @@ module Spree
 
     class Price < Spree::Amazon::Base
 
-      class << self
+
 
       @@price
 
@@ -29,7 +29,7 @@ module Spree
         @@price = price
       end
 
-    end
+
     end
   end
 end
