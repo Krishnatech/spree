@@ -10,10 +10,12 @@ module Spree
       attr_accessor :total_pages
       attr_accessor :current_page
 
-      def initialize
+      def initialize(params)
         @total_entries = 0
         @total_pages = 1
         @current_page = 1
+
+        super params
       end
 
       def per_page
