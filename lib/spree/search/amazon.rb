@@ -1,5 +1,9 @@
 module Spree::Search
-  class Amazon < Spree::Search::Base
+  class Amazon < Spree::Core::Search::Base
+
+    def manage_pagination
+      true
+    end
 
     def retrieve_products
       curr_page = manage_pagination && keywords ? 1 : page

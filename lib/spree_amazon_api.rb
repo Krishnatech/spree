@@ -23,21 +23,15 @@ module SpreeAmazonApi
 
       Spree::AppConfiguration.class_eval do
         preference :redirect_to_amazon, :boolean,  :default => false
+        preference :amazon_options, :hash
       end
 
-      Spree::Config.class_eval do
-        class << self
-          def amazon_options
-            @@amazon_options ||= YAML.load(File.open(File.join(Rails.root,'config', 'amazon.yml')))[Rails.env]
+      Spree::Config.amazon_options = amazon_options
 
-            @@amazon_options
-          end
-        end # end class << self
-      end
 
       Amazon::Ecs.configure do |options|
-        options[:aWS_access_key_id]        = amazon_options[:configure][:aWS_access_key_id]
-        options[:aWS_secret_key]           = amazon_options[:configure][:aWS_secret_key]
+        options[:AWS_access_key_id]        = amazon_options[:configure][:AWS_access_key_id]
+        options[:AWS_secret_key]           = amazon_options[:configure][:AWS_secret_key]
         options[:response_group]           = amazon_options[:configure][:response_group] || 'Large'
         options[:country]                  = amazon_options[:configure][:country] || 'us'
       end

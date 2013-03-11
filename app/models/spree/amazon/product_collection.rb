@@ -5,9 +5,16 @@ module Spree
     #
     class ProductCollection < Array
       MAX_TOTAL_PAGES = 200
-      attr_accessor_with_default :total_entries, 0
-      attr_accessor_with_default :total_pages,   1
-      attr_accessor_with_default :current_page,  1
+
+      attr_accessor :total_entries
+      attr_accessor :total_pages
+      attr_accessor :current_page
+
+      def initialize
+        @total_entries = 0
+        @total_pages = 1
+        @current_page = 1
+      end
 
       def per_page
         10

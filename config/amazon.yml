@@ -1,16 +1,18 @@
 ---
 default: &DEFAULT
   :configure:
-    :aWS_access_key_id: 0XQXXC6YV2C85DX1BF02
-    :aWS_secret_key: fwLOn0Y/IUXEM8Hk49o7QJV+ryOscbhXRb6CmA5l
+    :AWS_access_key_id: 'AKIAIAWV6JNCFMQED6YQ'
+    :AWS_secret_key: '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'
     :response_group: 'Large'
     :country: 'us'
+    :associate_tag: "from054-20"
   :query:
     :q: "%{q}"
     :options:
       :search_index: 'All'
       :response_group: 'Large, Accessories'
       :sort: "salesrank"
+
 
 development:
   <<: *DEFAULT
