@@ -118,8 +118,9 @@ module Spree
       end
 
       def price_in(currency)
-        return nil
-        #@price
+        p = Spree::Amazon::Price.new
+        p.price = @price
+        p
       end
 
       def master
