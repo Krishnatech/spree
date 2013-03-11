@@ -113,6 +113,10 @@ module Spree
         true
       end
 
+      def on_display?
+        true
+      end
+
       def master
         self
       end
