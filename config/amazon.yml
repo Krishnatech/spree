@@ -10,8 +10,9 @@ default: &DEFAULT
     :q: "%{q}"
     :options:
       :search_index: 'All'
-      :response_group: 'Large, Accessories'
+      :response_group: 'Large'
       :sort: "salesrank"
+      :associate_tag: "from054-20"
 
 
 development:

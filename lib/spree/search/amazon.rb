@@ -6,6 +6,7 @@ module Spree::Search
     end
 
     def retrieve_products
+
       curr_page = manage_pagination && keywords ? 1 : page
       options = {:item_page => curr_page , :page_size => 10 }
 
