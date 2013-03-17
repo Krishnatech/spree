@@ -27,7 +27,7 @@ module SpreeEcs
       def find(asin, options={ })
         cache("spree_ecs:product:find:#{asin}:#{options.stringify_keys.sort}") do
           log("find product asin:#{asin} || options: #{options.inspect}")
-          mapped(Amazon::Ecs.item_lookup(asin, ({ :response_group => "Large, Accessories" }).merge(options)).items.first)
+          mapped(Amazon::Ecs.item_lookup(asin, ({ :response_group => "Large, Accessories", :associate_tag => @options[:associate_tag] }).merge(options)).items.first)
         end
       end
 
@@ -36,7 +36,7 @@ module SpreeEcs
       def multi_find(asins, options={ })
         cache("spree_ecs:product:multifind:#{asins}:#{options.stringify_keys.sort}") do
           log(" multi find product asin:#{asins} || options: #{options.inspect}")
-          Amazon::Ecs.item_lookup(asins, ({ :response_group => "Large, Accessories" }).merge(options)).items.map{|v| mapped(v) }
+          Amazon::Ecs.item_lookup(asins, ({ :response_group => "Large, Accessories", :associate_tag => @options[:associate_tag] }).merge(options)).items.map{|v| mapped(v) }
         end
       end
 

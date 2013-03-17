@@ -90,6 +90,14 @@ module Spree
         @images.blank? ? [] : @images.map{ |x| Spree::Amazon::Image.new(x, @name) }
       end
 
+      def variant_images
+        []
+      end
+
+      def on_sale?
+        false
+      end
+
       # Variants
       #
       def variants
@@ -100,6 +108,7 @@ module Spree
       def has_variants?
         !@variants.blank?
       end
+
 
       def available?
         true
